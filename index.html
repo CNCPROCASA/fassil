@@ -366,8 +366,8 @@
     "description": "Paravent décoratif autoportant en MDF 19 mm (170×55 cm) pour séparer entrée/salon, coin prière, bureau ou magasin.",
     "brand": { "@type": "Brand", "name": "fassil" },
     "image": [
-      "https://cncprocasa.github.io/fassil/4.png",
-      "https://cncprocasa.github.io/fassil/2.png",
+      "https://cncprocasa.github.io/fassil/images/4.png",
+      "https://cncprocasa.github.io/fassil/images/2.png",
       "https://cncprocasa.github.io/fassil/images/3.png"
     ],
     "material": "MDF 19 mm",
@@ -533,6 +533,7 @@
                 <option>Noir</option>
                 <option>Marron</option>
               </select>
+              <div id="blackNote_fr" class="hint" style="display:none;">⚠️ Couleur noir : prix standard (pas de promotion).</div>
 
               <!-- Aperçu couleur -->
               <div class="color-preview">
@@ -745,6 +746,7 @@
                 <option>أسود</option>
                 <option>بني</option>
               </select>
+              <div id="blackNote_ar" class="hint" style="display:none;">⚠️ اللون الأسود: ثمن عادي (بلا تخفيض).</div>
 
               <div class="color-preview">
                 <div class="frame">
@@ -861,6 +863,10 @@
 
   <script>
     // === CONFIG ===
+    function isValidWaNumber(n){
+  return typeof n === "string" && /^[0-9]{8,15}$/.test(n);
+}
+
     const WHATSAPP_NUMBER = "212600000000"; // <-- Remplace par ton WhatsApp (sans +)
     const NORMAL_UNIT_PRICE = 1100;
 
@@ -937,8 +943,12 @@
       const unitNormEl     = document.getElementById(isAr ? 'unitNoteNormal_ar' : 'unitNoteNormal_fr');
 
       const badgeEl        = document.getElementById(isAr ? 'badge_ar' : 'badge_fr');
+      const blackNoteEl    = document.getElementById(isAr ? 'blackNote_ar' : 'blackNote_fr');
+
 
       const p = computePricing(qty, color);
+      if (blackNoteEl) blackNoteEl.style.display = p.black ? "block" : "none";
+
 
       // Always set the main total (single big number)
       if (mainTotalEl) mainTotalEl.textContent = p.currentTotal + " MAD";
@@ -986,6 +996,11 @@
 
     function sendOrder(lang){
       const isAr = (lang === 'ar');
+      if (!isValidWaNumber(WHATSAPP_NUMBER)){
+  alert(isAr ? "رقم واتساب غير صحيح." : "Numéro WhatsApp non valide.");
+  return;
+}
+
 
       const qty = parseInt(document.getElementById(isAr ? 'qty_ar' : 'qty_fr').value, 10) || 1;
       const color = document.getElementById(isAr ? 'color_ar' : 'color_fr').value || "";
@@ -1028,11 +1043,16 @@ Ville : ${city}
 Note : ${note}`;
 
       const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
-      window.open(url, "_blank");
+      window.open(url, "_blank", "noopener,noreferrer");
     }
 
     function sendCustom(lang){
       const isAr = (lang === 'ar');
+      if (!isValidWaNumber(WHATSAPP_NUMBER)){
+  alert(isAr ? "رقم واتساب غير صحيح." : "Numéro WhatsApp non valide.");
+  return;
+}
+
 
       const h = document.getElementById(isAr ? 'c_h_ar' : 'c_h_fr').value || "";
       const w = document.getElementById(isAr ? 'c_w_ar' : 'c_w_fr').value || "";
