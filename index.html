@@ -289,6 +289,24 @@
       border-radius:16px;padding:14px;
       background: linear-gradient(135deg,#ffffff,#faf8f2);
     }
+    /* Accordion "Sur mesure" */
+.custom-summary{
+  cursor:pointer;
+  font-weight:1000;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  padding:10px 12px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:#fff;
+  box-shadow: 0 8px 18px rgba(0,0,0,.04);
+}
+.custom-box{ padding:12px; } /* garde ton style, ajustable */
+.custom-box summary{ list-style:none; }
+.custom-box summary::-webkit-details-marker{ display:none; }
+.custom-box[open] .custom-summary{ margin-bottom:10px; }
     .custom-grid{
       display:grid;grid-template-columns: 1fr 1fr;
       gap:10px;margin-top:10px;
@@ -340,6 +358,11 @@
 
     /* Responsive */
     @media (max-width: 980px){
+      /* Mobile: prix visible avant "Sur mesure" */
+      .shop-grid{ display:flex; flex-direction:column; }
+      .price-box{ order:1; }
+      .shop-box{ order:2; }
+      .custom-wrap{ order:3; }
       .hero{grid-template-columns:1fr}
       .grid2{grid-template-columns:1fr}
       .shop-grid{grid-template-columns:1fr}
@@ -553,7 +576,12 @@
               <textarea id="note_fr" placeholder="Ex : livraison soir, étage, etc."></textarea>
 
               <!-- Sur mesure -->
-              <div class="custom-box" id="custom_fr">
+              <div class="custom-wrap">
+                <details class="custom-box" id="custom_fr">
+                  <summary class="custom-summary">
+                    <span>Sur mesure</span>
+                    <span class="badge-info">📐 Devis rapide</span>
+                  </summary>
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
                   <div style="font-weight:1000;">Sur mesure</div>
                   <span class="badge-info">📐 Devis rapide</span>
@@ -599,9 +627,8 @@
                 </div>
 
                 <div class="divider"></div>
-                <a class="btn green" href="#" onclick="sendCustom('fr');return false;">Demander un devis sur WhatsApp</a>
+                <a class="btn green" href="#" onclick="sendCustom('fr');return false;">Demander un devis sur WhatsApp</a> </details></div>
               </div>
-            </div>
 
             <div class="price-box">
               <div class="price-label">Prix total TTC</div>
@@ -764,7 +791,12 @@
               <label>ملاحظة (اختياري)</label>
               <textarea id="note_ar" placeholder="مثال: وقت التسليم، طابق، إلخ"></textarea>
 
-              <div class="custom-box" id="custom_ar">
+              <div class="custom-wrap">
+  <details class="custom-box" id="custom_ar">
+    <summary class="custom-summary">
+      <span>على المقاس</span>
+      <span class="badge-info">📐 ثمن سريع</span>
+    </summary>
                 <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
                   <div style="font-weight:1000;">على المقاس</div>
                   <span class="badge-info">📐 ثمن سريع</span>
@@ -811,7 +843,8 @@
 
                 <div class="divider"></div>
                 <a class="btn green" href="#" onclick="sendCustom('ar');return false;">طلب ثمن عبر واتساب</a>
-              </div>
+  </details>
+</div>
             </div>
 
             <div class="price-box">
@@ -1086,6 +1119,9 @@ Ville : ${city}
 Remarques : ${note}`;
 
       const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
+      // close accordion after sending
+const details = document.getElementById(isAr ? "custom_ar" : "custom_fr");
+if (details && details.open) details.open = false;
       window.open(url, "_blank", "noopener,noreferrer");
 
     }
