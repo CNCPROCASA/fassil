@@ -4,26 +4,37 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
 
-  <title>Fassil | Paravent décoratif au Maroc – Séparation élégante sans travaux</title>
+  <!-- ===================== SEO CORE ===================== -->
+  <title>Paravent décoratif 170×55 cm au Maroc | Séparation entrée salon – Fassil</title>
   <meta name="description" content="Fassil : paravent décoratif autoportant (170×55 cm) en MDF 19 mm. Idéal pour séparer entrée/salon, coin prière, bureau, magasin. Livraison gratuite Casablanca & environs. Commande WhatsApp." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
+  <!-- ✅ IMPORTANT : remplace SITE_URL quand ton domaine bymoro.ma est 100% actif -->
+  <!-- Exemple conseillé : https://bymoro.ma/fassil/ -->
   <link rel="canonical" href="https://cncprocasa.github.io/Fassil/" />
+
+  <!-- Hreflang (FR/AR) -->
+  <link rel="alternate" hreflang="fr-MA" href="https://cncprocasa.github.io/Fassil/" />
+  <link rel="alternate" hreflang="ar-MA" href="https://cncprocasa.github.io/Fassil/#ar" />
+  <link rel="alternate" hreflang="x-default" href="https://cncprocasa.github.io/Fassil/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="product" />
   <meta property="og:locale" content="fr_FR" />
-  <meta property="og:title" content="Fassil | Paravent décoratif – Séparation élégante sans travaux" />
-  <meta property="og:description" content="Paravent décoratif autoportant (170×55 cm) – livraison gratuite Casablanca & environs. Commande WhatsApp." />
+  <meta property="og:title" content="Fassil | Paravent décoratif 170×55 – Séparation élégante sans travaux" />
+  <meta property="og:description" content="Paravent décoratif autoportant (170×55 cm) – Livraison gratuite Casablanca & environs. Commande WhatsApp." />
   <meta property="og:url" content="https://cncprocasa.github.io/Fassil/" />
   <meta property="og:image" content="https://cncprocasa.github.io/Fassil/images/4.png" />
   <meta property="og:image:alt" content="Paravent Fassil – séparation entrée et salon" />
 
   <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Fassil | Paravent décoratif – Séparation élégante" />
+  <meta name="twitter:title" content="Fassil | Paravent décoratif 170×55 – Séparation élégante" />
   <meta name="twitter:description" content="Séparer entrée/salon, coin prière, bureau, magasin. Livraison gratuite Casa & environs. Commande WhatsApp." />
   <meta name="twitter:image" content="https://cncprocasa.github.io/Fassil/images/4.png" />
+
+  <!-- Performance hints -->
+  <meta name="theme-color" content="#f6f5f3" />
 
   <style>
     :root{
@@ -39,8 +50,10 @@
       --shadow2: 0 10px 30px rgba(0,0,0,.08);
       --radius: 18px;
       --ok:#1f9d55;
+      --focus: 0 0 0 4px rgba(201,169,106,.25);
     }
     *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
     body{
       margin:0;
       font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
@@ -50,6 +63,16 @@
     }
     a{color:inherit}
     .wrap{max-width:1180px;margin:0 auto;padding:22px 16px 120px;}
+
+    /* Skip link (accessibilité) */
+    .skip{
+      position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;
+    }
+    .skip:focus{
+      left:12px;top:12px;width:auto;height:auto;overflow:visible;
+      background:#fff;border:1px solid var(--line);border-radius:12px;
+      padding:10px 12px;box-shadow:var(--shadow2);z-index:9999;
+    }
 
     /* Topbar */
     .topbar{
@@ -68,6 +91,7 @@
       width:34px;height:34px;border-radius:10px;
       background: linear-gradient(135deg,var(--brand),var(--brand2));
       box-shadow: 0 10px 20px rgba(201,169,106,.35);
+      flex:0 0 auto;
     }
     .pill{
       display:inline-flex;align-items:center;gap:8px;
@@ -85,6 +109,7 @@
       padding:8px 12px;border-radius:999px;
       font-weight:800;font-size:13px;cursor:pointer;
     }
+    .lang-btn:focus{outline:none;box-shadow:var(--focus)}
     .lang-btn.active{
       border-color: rgba(201,169,106,.55);
       box-shadow: 0 10px 24px rgba(201,169,106,.25);
@@ -128,7 +153,9 @@
       background:#fff;
       font-weight:900;cursor:pointer;text-decoration:none;
       transition: transform .2s ease, box-shadow .2s ease;
+      user-select:none;
     }
+    .btn:focus{outline:none;box-shadow:var(--focus)}
     .btn:hover{transform:translateY(-1px);box-shadow: 0 12px 30px rgba(0,0,0,.10)}
     .btn.primary{background: linear-gradient(135deg,var(--dark),#2f2f2f);color:#fff;border-color: transparent}
     .btn.gold{background: linear-gradient(135deg,var(--brand),var(--brand2));color:#fff;border-color: transparent}
@@ -202,6 +229,13 @@
       margin-top:6px;
       font-size:15px;
       background:#fff;
+    }
+    .shop-box input:focus,
+    .shop-box select:focus,
+    .shop-box textarea:focus{
+      outline:none;
+      box-shadow:var(--focus);
+      border-color: rgba(201,169,106,.7);
     }
 
     .price-box{
@@ -304,13 +338,27 @@
     .custom-box summary::-webkit-details-marker{ display:none; }
     .custom-box[open] .custom-summary{ margin-bottom:10px; }
 
-    .custom-grid{
-      display:grid;grid-template-columns: 1fr 1fr;
-      gap:10px;margin-top:10px;
+    /* FAQ */
+    .faq{margin-top:18px}
+    .faq details{
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      padding:10px 12px;
+      box-shadow: 0 8px 18px rgba(0,0,0,.04);
+      margin-top:10px;
     }
-    .custom-grid .full{grid-column: 1 / -1;}
-    .hint{font-size:12.5px;color:var(--muted);font-weight:800;margin-top:8px;}
-    .divider{height:1px;background:var(--line);margin:12px 0;}
+    .faq summary{
+      cursor:pointer;
+      font-weight:1000;
+      list-style:none;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+    }
+    .faq summary::-webkit-details-marker{display:none}
+    .faq .a{color:var(--muted);margin-top:8px;font-size:15px}
 
     .cta{
       margin-top:22px;
@@ -363,7 +411,6 @@
       .pill{display:none}
       .price-box{position: static; top:auto;}
       .color-preview .frame{height:220px;}
-      .custom-grid{grid-template-columns:1fr;}
 
       /* ✅ Mobile: prix AVANT le formulaire */
       .shop-grid{
@@ -377,6 +424,7 @@
       .shop-grid > .shop-box{
         order:0;
       }
+      .custom-grid{grid-template-columns:1fr;}
     }
     @media (max-width: 520px){
       .wrap{padding:18px 12px 120px}
@@ -385,13 +433,13 @@
     }
   </style>
 
-  <!-- Product structured data (SEO) -->
+  <!-- ===================== STRUCTURED DATA ===================== -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Product",
     "name": "Fassil – Paravent décoratif",
-    "description": "Paravent décoratif autoportant en MDF 19 mm (170×55 cm) pour séparer entrée/salon, coin prière, bureau ou magasin.",
+    "description": "Paravent décoratif autoportant en MDF 19 mm (170×55 cm) pour séparer entrée/salon, coin prière, bureau ou magasin. Livraison Casablanca & environs.",
     "brand": { "@type": "Brand", "name": "Fassil" },
     "image": [
       "https://cncprocasa.github.io/Fassil/images/4.png",
@@ -408,13 +456,57 @@
     }
   }
   </script>
+
+  <!-- FAQ Schema (FR) -->
+  <script type="application/ld+json" id="faqSchemaFr">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le paravent Fassil est-il stable ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Fassil est autoportant avec un pied (largeur 38 cm) conçu pour assurer une bonne stabilité en intérieur."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Livrez-vous à Casablanca ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Livraison gratuite à Casablanca et environs (selon zone)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on l’utiliser pour un coin prière ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui. Fassil est souvent utilisé pour créer un coin prière discret sans travaux."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelles couleurs sont disponibles ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "MDF standard : naturel, blanc, noir, marron (selon disponibilité)."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body class="lang-fr">
+  <a class="skip" href="#main">Aller au contenu</a>
+
   <!-- TOPBAR -->
   <div class="topbar">
     <div class="topbar-inner">
-      <div class="brand">
+      <div class="brand" aria-label="Marque Fassil">
         <div class="logo" aria-hidden="true"></div>
         <div>
           <div style="font-size:14px;font-weight:1000;">Fassil</div>
@@ -431,7 +523,7 @@
     </div>
   </div>
 
-  <main class="wrap">
+  <main class="wrap" id="main">
     <!-- ===================== FR ===================== -->
     <section data-lang="fr">
       <!-- HERO -->
@@ -580,7 +672,7 @@
               <label>Remarque (optionnel)</label>
               <textarea id="note_fr" placeholder="Ex : livraison soir, étage, etc."></textarea>
 
-              <!-- Sur mesure (Accordion OK + structure clean) -->
+              <!-- Sur mesure -->
               <div class="custom-wrap">
                 <details class="custom-box" id="custom_fr">
                   <summary class="custom-summary">
@@ -666,6 +758,31 @@
         </div>
       </div>
 
+      <!-- FAQ (FR) -->
+      <div class="section">
+        <div class="card">
+          <h2>Questions fréquentes (FAQ)</h2>
+          <div class="faq">
+            <details>
+              <summary>Le paravent Fassil est-il stable ? <span>+</span></summary>
+              <div class="a">Oui. Fassil est autoportant avec un pied (largeur 38 cm) conçu pour une bonne stabilité en intérieur.</div>
+            </details>
+            <details>
+              <summary>Livrez-vous à Casablanca ? <span>+</span></summary>
+              <div class="a">Oui. Livraison gratuite à Casablanca et environs (selon zone).</div>
+            </details>
+            <details>
+              <summary>Peut-on l’utiliser pour un coin prière ? <span>+</span></summary>
+              <div class="a">Oui. Fassil est souvent utilisé pour créer un coin prière discret sans travaux.</div>
+            </details>
+            <details>
+              <summary>Quelles couleurs sont disponibles ? <span>+</span></summary>
+              <div class="a">MDF standard : naturel, blanc, noir, marron (selon disponibilité).</div>
+            </details>
+          </div>
+        </div>
+      </div>
+
       <!-- CTA -->
       <div class="cta">
         <div>
@@ -677,7 +794,7 @@
     </section>
 
     <!-- ===================== AR ===================== -->
-    <section data-lang="ar" class="rtl">
+    <section data-lang="ar" class="rtl" id="ar">
       <div class="hero">
         <div class="hero-card">
           <div>
@@ -793,7 +910,6 @@
               <label>ملاحظة (اختياري)</label>
               <textarea id="note_ar" placeholder="مثال: وقت التسليم، طابق، إلخ"></textarea>
 
-              <!-- Sur mesure AR (clean + no duplicated header) -->
               <div class="custom-wrap">
                 <details class="custom-box" id="custom_ar">
                   <summary class="custom-summary">
@@ -889,19 +1005,28 @@
     </section>
   </main>
 
+  <!-- Sticky actions -->
   <div class="sticky">
-    <a class="call" href="tel:+212600000000">📞 Appeler</a>
-    <a class="wa" href="#" onclick="sendOrder(document.body.classList.contains('lang-ar') ? 'ar' : 'fr');return false;">💬 WhatsApp</a>
+    <a class="call" id="callBtn" href="tel:+212680880994" aria-label="Appeler">📞 Appeler</a>
+    <a class="wa" href="#" onclick="sendOrder(document.body.classList.contains('lang-ar') ? 'ar' : 'fr');return false;" aria-label="WhatsApp">💬 WhatsApp</a>
   </div>
 
   <script>
-    // === CONFIG ===
+    // ===================== CONFIG =====================
+    // ✅ Numéro fourni : 0680880994
+    // WhatsApp wa.me doit être en format international SANS + : 212680880994
+    const WHATSAPP_NUMBER = "212680880994";
+    const TEL_NUMBER = "+212680880994";
+
+    const NORMAL_UNIT_PRICE = 1100;
+
     function isValidWaNumber(n){
       return typeof n === "string" && /^[0-9]{8,15}$/.test(n);
     }
 
-    const WHATSAPP_NUMBER = "212600000000"; // <-- Remplace par ton WhatsApp (sans +)
-    const NORMAL_UNIT_PRICE = 1100;
+    // Met à jour le bouton appel (au cas où)
+    const callBtn = document.getElementById("callBtn");
+    if (callBtn) callBtn.href = "tel:" + TEL_NUMBER;
 
     function promoUnitPriceByQty(qty){
       if (qty === 1) return 880;
@@ -912,7 +1037,7 @@
       return (color === "Noir" || color === "أسود");
     }
 
-    // Language switching
+    // ===================== Language switching (avec mémorisation) =====================
     const btnFr = document.getElementById('btnFr');
     const btnAr = document.getElementById('btnAr');
 
@@ -921,13 +1046,30 @@
       document.body.classList.add(lang === 'ar' ? 'lang-ar' : 'lang-fr');
       btnFr.classList.toggle('active', lang !== 'ar');
       btnAr.classList.toggle('active', lang === 'ar');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Met à jour l'attribut lang (important SEO/accessibilité)
+      document.documentElement.setAttribute("lang", lang === "ar" ? "ar" : "fr");
+
+      // mémoriser choix
+      try{ localStorage.setItem("fassil_lang", lang); }catch(e){}
+
       updatePricing(lang === 'ar' ? 'ar' : 'fr');
     }
     btnFr.addEventListener('click', () => setLang('fr'));
     btnAr.addEventListener('click', () => setLang('ar'));
 
-    // Color preview mapping (images folder)
+    // init lang from storage or hash
+    (function initLang(){
+      let lang = "fr";
+      try{
+        const saved = localStorage.getItem("fassil_lang");
+        if (saved === "ar" || saved === "fr") lang = saved;
+      }catch(e){}
+      if (location.hash === "#ar") lang = "ar";
+      setLang(lang);
+    })();
+
+    // ===================== Color preview mapping =====================
     function updateColorPreview(lang){
       const isAr = (lang === 'ar');
       const color = document.getElementById(isAr ? 'color_ar' : 'color_fr').value;
@@ -1110,14 +1252,13 @@ Remarques : ${note}`;
 
       const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
 
-      // close accordion after sending
       const details = document.getElementById(isAr ? "custom_ar" : "custom_fr");
       if (details && details.open) details.open = false;
 
       window.open(url, "_blank", "noopener,noreferrer");
     }
 
-    // init
+    // init (pricing + previews)
     updateColorPreview('fr');
     updateColorPreview('ar');
     updatePricing(document.body.classList.contains('lang-ar') ? 'ar' : 'fr');
