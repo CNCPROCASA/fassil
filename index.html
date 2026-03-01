@@ -8,7 +8,6 @@
   <meta name="description" content="fassil : paravent décoratif autoportant (170×55 cm) en MDF 19 mm. Idéal pour séparer entrée/salon, coin prière, bureau, magasin. Livraison gratuite Casablanca & environs. Commande WhatsApp." />
   <meta name="robots" content="index,follow,max-image-preview:large" />
 
-  <!-- Canonical (mets TON url GitHub Pages une fois en ligne) -->
   <link rel="canonical" href="https://cncprocasa.github.io/fassil/" />
 
   <!-- Open Graph -->
@@ -25,9 +24,6 @@
   <meta name="twitter:title" content="fassil | Paravent décoratif – Séparation élégante" />
   <meta name="twitter:description" content="Séparer entrée/salon, coin prière, bureau, magasin. Livraison gratuite Casa & environs. Commande WhatsApp." />
   <meta name="twitter:image" content="https://cncprocasa.github.io/fassil/images/4.png" />
-
-  <!-- Favicons (optionnel) -->
-  <!-- <link rel="icon" href="images/favicon.png"> -->
 
   <style>
     :root{
@@ -283,30 +279,31 @@
       border-top:1px solid var(--line);font-weight:900;
     }
 
-    /* Sur mesure */
+    /* Sur mesure (Accordion) */
     .custom-box{
-      margin-top:16px;border:1px solid var(--line);
-      border-radius:16px;padding:14px;
+      margin-top:16px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:12px;
       background: linear-gradient(135deg,#ffffff,#faf8f2);
     }
-    /* Accordion "Sur mesure" */
-.custom-summary{
-  cursor:pointer;
-  font-weight:1000;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:10px;
-  padding:10px 12px;
-  border:1px solid var(--line);
-  border-radius:14px;
-  background:#fff;
-  box-shadow: 0 8px 18px rgba(0,0,0,.04);
-}
-.custom-box{ padding:12px; } /* garde ton style, ajustable */
-.custom-box summary{ list-style:none; }
-.custom-box summary::-webkit-details-marker{ display:none; }
-.custom-box[open] .custom-summary{ margin-bottom:10px; }
+    .custom-summary{
+      cursor:pointer;
+      font-weight:1000;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      padding:10px 12px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:#fff;
+      box-shadow: 0 8px 18px rgba(0,0,0,.04);
+    }
+    .custom-box summary{ list-style:none; }
+    .custom-box summary::-webkit-details-marker{ display:none; }
+    .custom-box[open] .custom-summary{ margin-bottom:10px; }
+
     .custom-grid{
       display:grid;grid-template-columns: 1fr 1fr;
       gap:10px;margin-top:10px;
@@ -357,29 +354,30 @@
     .rtl .tag{left:auto;right:14px}
 
     /* Responsive */
-@media (max-width: 980px){
-  .hero{grid-template-columns:1fr}
-  .grid2{grid-template-columns:1fr}
-  .cta{grid-template-columns:1fr}
-  .title{font-size:36px}
-  .pill{display:none}
-  .price-box{position: static; top:auto;}
-  .color-preview .frame{height:220px;}
-  .custom-grid{grid-template-columns:1fr;}
+    @media (max-width: 980px){
+      .hero{grid-template-columns:1fr}
+      .grid2{grid-template-columns:1fr}
+      .shop-grid{grid-template-columns:1fr}
+      .cta{grid-template-columns:1fr}
+      .title{font-size:36px}
+      .pill{display:none}
+      .price-box{position: static; top:auto;}
+      .color-preview .frame{height:220px;}
+      .custom-grid{grid-template-columns:1fr;}
 
-  /* ✅ Mobile: mettre le prix AVANT le formulaire */
-  .shop-grid{
-    display:flex;
-    flex-direction:column;
-  }
-  .shop-grid > .price-box{
-    order:-1;              /* price-box d'abord */
-    margin-bottom:14px;
-  }
-  .shop-grid > .shop-box{
-    order:0;
-  }
-}
+      /* ✅ Mobile: prix AVANT le formulaire */
+      .shop-grid{
+        display:flex;
+        flex-direction:column;
+      }
+      .shop-grid > .price-box{
+        order:-1;
+        margin-bottom:14px;
+      }
+      .shop-grid > .shop-box{
+        order:0;
+      }
+    }
     @media (max-width: 520px){
       .wrap{padding:18px 12px 120px}
       .title{font-size:32px}
@@ -582,69 +580,66 @@
               <label>Remarque (optionnel)</label>
               <textarea id="note_fr" placeholder="Ex : livraison soir, étage, etc."></textarea>
 
-              <!-- Sur mesure -->
+              <!-- Sur mesure (Accordion OK + structure clean) -->
               <div class="custom-wrap">
-               <!-- Sur mesure -->
-<div class="custom-wrap">
-  <details class="custom-box" id="custom_fr">
-    <summary class="custom-summary">
-      <span>Sur mesure</span>
-      <span class="badge-info">📐 Devis rapide</span>
-    </summary>
+                <details class="custom-box" id="custom_fr">
+                  <summary class="custom-summary">
+                    <span>Sur mesure</span>
+                    <span class="badge-info">📐 Devis rapide</span>
+                  </summary>
 
-    <div class="hint">Besoin d’une autre hauteur / largeur ? Donnez les mesures et on vous répond sur WhatsApp.</div>
+                  <div class="hint">Besoin d’une autre hauteur / largeur ? Donnez les mesures et on vous répond sur WhatsApp.</div>
 
-    <div class="custom-grid">
-      <div>
-        <label style="margin-top:0">Hauteur (cm)</label>
-        <input id="c_h_fr" type="number" min="50" placeholder="170" />
-      </div>
-      <div>
-        <label style="margin-top:0">Largeur (cm)</label>
-        <input id="c_w_fr" type="number" min="30" placeholder="55" />
-      </div>
-      <div>
-        <label>Couleur</label>
-        <select id="c_color_fr">
-          <option>Naturel</option>
-          <option>Blanc</option>
-          <option>Noir</option>
-          <option>Marron</option>
-        </select>
-      </div>
-      <div>
-        <label>Quantité</label>
-        <select id="c_qty_fr">
-          <option value="1">1</option>
-          <option value="2">2</option>
-          <option value="3">3</option>
-          <option value="4">4</option>
-          <option value="5">5</option>
-          <option value="6">6</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="9">9</option>
-        </select>
-      </div>
-      <div class="full">
-        <label>Infos (optionnel)</label>
-        <textarea id="c_note_fr" placeholder="Ex : besoin d’un retour, fixation, délai souhaité, etc."></textarea>
-      </div>
-    </div>
+                  <div class="custom-grid">
+                    <div>
+                      <label style="margin-top:0">Hauteur (cm)</label>
+                      <input id="c_h_fr" type="number" min="50" placeholder="170" />
+                    </div>
+                    <div>
+                      <label style="margin-top:0">Largeur (cm)</label>
+                      <input id="c_w_fr" type="number" min="30" placeholder="55" />
+                    </div>
+                    <div>
+                      <label>Couleur</label>
+                      <select id="c_color_fr">
+                        <option>Naturel</option>
+                        <option>Blanc</option>
+                        <option>Noir</option>
+                        <option>Marron</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>Quantité</label>
+                      <select id="c_qty_fr">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                      </select>
+                    </div>
+                    <div class="full">
+                      <label>Infos (optionnel)</label>
+                      <textarea id="c_note_fr" placeholder="Ex : besoin d’un retour, fixation, délai souhaité, etc."></textarea>
+                    </div>
+                  </div>
 
-    <div class="divider"></div>
-    <a class="btn green" href="#" onclick="sendCustom('fr');return false;">Demander un devis sur WhatsApp</a>
-  </details>
-</div>
+                  <div class="divider"></div>
+                  <a class="btn green" href="#" onclick="sendCustom('fr');return false;">Demander un devis sur WhatsApp</a>
+                </details>
+              </div>
+            </div>
 
             <div class="price-box">
               <div class="price-label">Prix total TTC</div>
               <div class="badge-promo" id="badge_fr">🔥 Offre promotionnelle (prix dégressif)</div>
 
-              <!-- Prix principal (toujours) -->
               <div class="price-value" id="mainTotal_fr">0 MAD</div>
 
-              <!-- Détail promo (caché pour NOIR via JS) -->
               <div class="price-lines" id="priceLines_fr">
                 <div class="line normal" id="lineNormal_fr">
                   <span id="normalLabel_fr">Prix normal</span>
@@ -798,60 +793,58 @@
               <label>ملاحظة (اختياري)</label>
               <textarea id="note_ar" placeholder="مثال: وقت التسليم، طابق، إلخ"></textarea>
 
+              <!-- Sur mesure AR (clean + no duplicated header) -->
               <div class="custom-wrap">
-  <details class="custom-box" id="custom_ar">
-    <summary class="custom-summary">
-      <span>على المقاس</span>
-      <span class="badge-info">📐 ثمن سريع</span>
-    </summary>
-                <div style="display:flex;align-items:center;justify-content:space-between;gap:10px;">
-                  <div style="font-weight:1000;">على المقاس</div>
-                  <span class="badge-info">📐 ثمن سريع</span>
-                </div>
-                <div class="hint">بغيتي قياس مختلف؟ عطينا المقاسات وغادي نجاوبوك فواتساب.</div>
+                <details class="custom-box" id="custom_ar">
+                  <summary class="custom-summary">
+                    <span>على المقاس</span>
+                    <span class="badge-info">📐 ثمن سريع</span>
+                  </summary>
 
-                <div class="custom-grid">
-                  <div>
-                    <label style="margin-top:0">العلو (سم)</label>
-                    <input id="c_h_ar" type="number" min="50" placeholder="170" />
-                  </div>
-                  <div>
-                    <label style="margin-top:0">العرض (سم)</label>
-                    <input id="c_w_ar" type="number" min="30" placeholder="55" />
-                  </div>
-                  <div>
-                    <label>اللون</label>
-                    <select id="c_color_ar">
-                      <option>طبيعي</option>
-                      <option>أبيض</option>
-                      <option>أسود</option>
-                      <option>بني</option>
-                    </select>
-                  </div>
-                  <div>
-                    <label>الكمية</label>
-                    <select id="c_qty_ar">
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                      <option value="6">6</option>
-                      <option value="7">7</option>
-                      <option value="8">8</option>
-                      <option value="9">9</option>
-                    </select>
-                  </div>
-                  <div class="full">
-                    <label>معلومات (اختياري)</label>
-                    <textarea id="c_note_ar" placeholder="مثال: وقت التسليم، ملاحظات، إلخ"></textarea>
-                  </div>
-                </div>
+                  <div class="hint">بغيتي قياس مختلف؟ عطينا المقاسات وغادي نجاوبوك فواتساب.</div>
 
-                <div class="divider"></div>
-                <a class="btn green" href="#" onclick="sendCustom('ar');return false;">طلب ثمن عبر واتساب</a>
-  </details>
-</div>
+                  <div class="custom-grid">
+                    <div>
+                      <label style="margin-top:0">العلو (سم)</label>
+                      <input id="c_h_ar" type="number" min="50" placeholder="170" />
+                    </div>
+                    <div>
+                      <label style="margin-top:0">العرض (سم)</label>
+                      <input id="c_w_ar" type="number" min="30" placeholder="55" />
+                    </div>
+                    <div>
+                      <label>اللون</label>
+                      <select id="c_color_ar">
+                        <option>طبيعي</option>
+                        <option>أبيض</option>
+                        <option>أسود</option>
+                        <option>بني</option>
+                      </select>
+                    </div>
+                    <div>
+                      <label>الكمية</label>
+                      <select id="c_qty_ar">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                      </select>
+                    </div>
+                    <div class="full">
+                      <label>معلومات (اختياري)</label>
+                      <textarea id="c_note_ar" placeholder="مثال: وقت التسليم، ملاحظات، إلخ"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="divider"></div>
+                  <a class="btn green" href="#" onclick="sendCustom('ar');return false;">طلب ثمن عبر واتساب</a>
+                </details>
+              </div>
             </div>
 
             <div class="price-box">
@@ -904,8 +897,8 @@
   <script>
     // === CONFIG ===
     function isValidWaNumber(n){
-  return typeof n === "string" && /^[0-9]{8,15}$/.test(n);
-}
+      return typeof n === "string" && /^[0-9]{8,15}$/.test(n);
+    }
 
     const WHATSAPP_NUMBER = "212600000000"; // <-- Remplace par ton WhatsApp (sans +)
     const NORMAL_UNIT_PRICE = 1100;
@@ -929,7 +922,6 @@
       btnFr.classList.toggle('active', lang !== 'ar');
       btnAr.classList.toggle('active', lang === 'ar');
       window.scrollTo({ top: 0, behavior: 'smooth' });
-      // update prices after switching
       updatePricing(lang === 'ar' ? 'ar' : 'fr');
     }
     btnFr.addEventListener('click', () => setLang('fr'));
@@ -985,23 +977,17 @@
       const badgeEl        = document.getElementById(isAr ? 'badge_ar' : 'badge_fr');
       const blackNoteEl    = document.getElementById(isAr ? 'blackNote_ar' : 'blackNote_fr');
 
-
       const p = computePricing(qty, color);
       if (blackNoteEl) blackNoteEl.style.display = p.black ? "block" : "none";
 
-
-      // Always set the main total (single big number)
       if (mainTotalEl) mainTotalEl.textContent = p.currentTotal + " MAD";
-
-      // Fill detail values (used only when promo is visible)
       if (normalTotalEl) normalTotalEl.textContent = p.normalTotal + " MAD";
       if (promoTotalEl)  promoTotalEl.textContent  = p.currentTotal + " MAD";
       if (saveEl)        saveEl.textContent        = p.saved + " MAD";
 
       if (p.black){
-        // === NOIR: display like old versions (simple) ===
-        if (priceLinesWrap) priceLinesWrap.style.display = "none"; // hide normal/promo/save blocks
-        if (unitNormEl) unitNormEl.style.display = "none";         // hide "normal per panel" line to avoid duplication
+        if (priceLinesWrap) priceLinesWrap.style.display = "none";
+        if (unitNormEl) unitNormEl.style.display = "none";
         if (badgeEl){
           badgeEl.classList.remove('badge-promo');
           badgeEl.classList.add('badge-info');
@@ -1013,9 +999,8 @@
             : ("Prix / panneau : " + p.currentUnit + " MAD");
         }
       } else {
-        // === Other colors: promo mode ===
         if (priceLinesWrap) priceLinesWrap.style.display = "";
-        if (unitNormEl) unitNormEl.style.display = ""; // show normal per panel line
+        if (unitNormEl) unitNormEl.style.display = "";
         if (badgeEl){
           badgeEl.classList.remove('badge-info');
           badgeEl.classList.add('badge-promo');
@@ -1037,10 +1022,9 @@
     function sendOrder(lang){
       const isAr = (lang === 'ar');
       if (!isValidWaNumber(WHATSAPP_NUMBER)){
-  alert(isAr ? "رقم واتساب غير صحيح." : "Numéro WhatsApp non valide.");
-  return;
-}
-
+        alert(isAr ? "رقم واتساب غير صحيح." : "Numéro WhatsApp non valide.");
+        return;
+      }
 
       const qty = parseInt(document.getElementById(isAr ? 'qty_ar' : 'qty_fr').value, 10) || 1;
       const color = document.getElementById(isAr ? 'color_ar' : 'color_fr').value || "";
@@ -1089,10 +1073,9 @@ Note : ${note}`;
     function sendCustom(lang){
       const isAr = (lang === 'ar');
       if (!isValidWaNumber(WHATSAPP_NUMBER)){
-  alert(isAr ? "رقم واتساب غير صحيح." : "Numéro WhatsApp non valide.");
-  return;
-}
-
+        alert(isAr ? "رقم واتساب غير صحيح." : "Numéro WhatsApp non valide.");
+        return;
+      }
 
       const h = document.getElementById(isAr ? 'c_h_ar' : 'c_h_fr').value || "";
       const w = document.getElementById(isAr ? 'c_w_ar' : 'c_w_fr').value || "";
@@ -1126,18 +1109,18 @@ Ville : ${city}
 Remarques : ${note}`;
 
       const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(msg);
-      // close accordion after sending
-const details = document.getElementById(isAr ? "custom_ar" : "custom_fr");
-if (details && details.open) details.open = false;
-      window.open(url, "_blank", "noopener,noreferrer");
 
+      // close accordion after sending
+      const details = document.getElementById(isAr ? "custom_ar" : "custom_fr");
+      if (details && details.open) details.open = false;
+
+      window.open(url, "_blank", "noopener,noreferrer");
     }
 
     // init
     updateColorPreview('fr');
     updateColorPreview('ar');
     updatePricing(document.body.classList.contains('lang-ar') ? 'ar' : 'fr');
-
   </script>
 </body>
 </html>
